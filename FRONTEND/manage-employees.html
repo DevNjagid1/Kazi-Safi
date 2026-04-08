@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazi Safi - Employee Directory</title>
+    <link rel="stylesheet" href="employees.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2L14.5 9H22L16 14L18.5 21L12 17L5.5 21L8 14L2 9H9.5L12 2Z"/></svg>
+                </div>
+                <div>
+                    <h3>Kazi Safi</h3>
+                    <p>Work-Pay System</p>
+                </div>
+            </div>
+            <nav class="menu">
+    <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+    <a href="manage-employees.html" class="nav-item">Employees</a>
+    <a href="admin-attendance.html" class="nav-item">Attendance</a>
+    <a href="payroll.html" class="nav-item">Payroll</a>
+    <a href="support-inbox.html" class="nav-item">Support Inbox</a>
+    <a href="audit-logs.html" class="nav-item">Audit Logs</a>
+</nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <strong>John Kamau</strong>
+                    <span>Administrator</span>
+                </div>
+                <button id="logoutBtn" class="logout-link">Log out</button>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <header class="section-header">
+                <div class="header-left">
+                    <h1>Employee Directory</h1>
+                    <p>Manage employee accounts and access</p>
+                </div>
+                <button id="openModalBtn" class="add-emp-btn">+ Add Employee</button>
+            </header>
+
+            <div class="search-container">
+                <div class="search-box">
+                    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                    <input type="text" id="employeeSearch" placeholder="Search by name, ID, or email...">
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table id="employeeTable">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>ID</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Daily Rate</th>
+                            <th>Start Date</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                   <tbody>
+                    <tr>
+        <td><div class="user-cell"><span class="avatar jw">JW</span><span>Jane Wanjiku</span></div></td>
+        <td>EMP001</td>
+        <td>jane.wanjiku@kazisafi.co.ke</td>
+        <td>+254700100001</td>
+        <td>KES 1,500</td>
+        <td>Feb 29, 2024</td>
+        <td><span class="badge active">Active</span></td>
+        <td><button class="toggle-status-btn">Disable</button></td>
+    </tr>
+    <tr>
+        <td><div class="user-cell"><span class="avatar po">PO</span><span>Meshack Masha</span></div></td>
+        <td>EMP002</td>
+        <td>meshack.masha@kazisafi.co.ke</td>
+        <td>+254797407512</td>
+        <td>KES 1,500</td>
+        <td>Jun 14, 2024</td>
+        <td><span class="badge active">Active</span></td>
+        <td><button class="toggle-status-btn">Disable</button></td>
+    </tr>
+    <tr>
+        <td><div class="user-cell"><span class="avatar ma">MA</span><span>Mary Akinyi</span></div></td>
+        <td>EMP003</td>
+        <td>mary.akinyi@kazisafi.co.ke</td>
+        <td>+254700100003</td>
+        <td>KES 1,800</td>
+        <td>Jan 09, 2024</td>
+        <td><span class="badge active">Active</span></td>
+        <td><button class="toggle-status-btn">Disable</button></td>
+    </tr>
+    <tr>
+        <td><div class="user-cell"><span class="avatar sk">SK</span><span>Samuel Kamau</span></div></td>
+        <td>EMP004</td>
+        <td>samuel.kamau@kazisafi.co.ke</td>
+        <td>+254700100004</td>
+        <td>KES 1,200</td>
+        <td>Mar 12, 2024</td>
+        <td><span class="badge active">Active</span></td>
+        <td><button class="toggle-status-btn">Disable</button></td>
+    </tr>
+    <tr>
+        <td><div class="user-cell"><span class="avatar cm">CM</span><span>Catherine Mutua</span></div></td>
+        <td>EMP005</td>
+        <td>catherine.mutua@kazisafi.co.ke</td>
+        <td>+254700100005</td>
+        <td>KES 2,000</td>
+        <td>May 20, 2024</td>
+        <td><span class="badge active">Active</span></td>
+        <td><button class="toggle-status-btn">Disable</button></td>
+    </tr>
+    <tr>
+        <td><div class="user-cell"><span class="avatar dk">DK</span><span>David Kiprono</span></div></td>
+        <td>EMP006</td>
+        <td>david.kiprono@kazisafi.co.ke</td>
+        <td>+254700100006</td>
+        <td>KES 1,500</td>
+        <td>Jul 02, 2024</td>
+        <td><span class="badge active">Active</span></td>
+        <td><button class="toggle-status-btn">Disable</button></td>
+    </tr>
+    <tr>
+        <td><div class="user-cell"><span class="avatar an">AN</span><span>Alice Njeri</span></div></td>
+        <td>EMP007</td>
+        <td>alice.njeri@kazisafi.co.ke</td>
+        <td>+254700100007</td>
+        <td>KES 1,650</td>
+        <td>Aug 15, 2024</td>
+        <td><span class="badge active">Active</span></td>
+        <td><button class="toggle-status-btn">Disable</button></td>
+    </tr>
+    <tr>
+        <td><div class="user-cell"><span class="avatar jo">JO</span><span>John Otieno</span></div></td>
+        <td>EMP008</td>
+        <td>john.otieno@kazisafi.co.ke</td>
+        <td>+254700100008</td>
+        <td>KES 1,400</td>
+        <td>Nov 30, 2024</td>
+        <td><span class="badge active">Active</span></td>
+        <td><button class="toggle-status-btn">Disable</button></td>
+    </tr>
+</tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <div id="employeeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Add New Employee</h2>
+                <span id="closeModal" class="close">&times;</span>
+            </div>
+            <form id="addEmployeeForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Full Name</label>
+                        <input type="text" id="newName" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Employee ID</label>
+                        <input type="text" id="newId" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" id="newEmail" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" id="newPhone" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Daily Rate (KES)</label>
+                        <input type="number" id="newRate" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Start Date</label>
+                        <input type="date" id="newDate" required>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Save Employee</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editEmployeeModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Edit Employee</h2>
+                <span id="closeEditModal" class="close">&times;</span>
+            </div>
+            <form id="editEmployeeForm">
+                <input type="hidden" id="editId">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Employee ID</label>
+                        <input type="text" id="editEmployeeId" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Department</label>
+                        <input type="text" id="editDepartment" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Position</label>
+                        <input type="text" id="editPosition" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Salary</label>
+                        <input type="number" step="0.01" id="editSalary" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Phone</label>
+                        <input type="text" id="editPhone">
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+                        <select id="editStatus">
+                            <option value="active">Active</option>
+                            <option value="inactive">Inactive</option>
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Update Employee</button>
+            </form>
+        </div>
+    </div>
+    <script src="employees.js"></script>
+</body>
+</html>

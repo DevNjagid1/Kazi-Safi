@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazi Safi - Admin Dashboard</title>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2L14.5 9H22L16 14L18.5 21L12 17L5.5 21L8 14L2 9H9.5L12 2Z"/></svg>
+                </div>
+                <div>
+                    <h3>Kazi Safi</h3>
+                    <p>Work-Pay System</p>
+                </div>
+            </div>
+
+            <nav class="menu">
+    <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+    <a href="manage-employees.html" class="nav-item">Employees</a>
+    <a href="admin-attendance.html" class="nav-item active">Attendance</a>
+    <a href="payroll.html" class="nav-item">Payroll</a>
+    <a href="support-inbox.html" class="nav-item">Support Inbox</a>
+    <a href="audit-logs.html" class="nav-item">Audit Logs</a>
+</nav>
+
+
+
+
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <strong>John Kamau</strong>
+                    <span>Administrator</span>
+                </div>
+                <button id="logoutBtn" class="logout-link">Log out</button>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <header class="main-header">
+                <h1>Dashboard</h1>
+                <p>Welcome back! Here's what's happening today.</p>
+            </header>
+
+            <section class="stats-grid">
+                <div class="stat-card">
+                    <div class="icon-circle">E</div>
+                    <div class="stat-label">Total Employees</div>
+                    <div class="stat-value" id="total-employees">0</div>
+                    <div class="stat-sub">Active staff members</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-circle orange">A</div>
+                    <div class="stat-label">Pending Attendance</div>
+                    <div class="stat-value" id="pending-attendance">0</div>
+                    <div class="stat-sub">Awaiting approval</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-circle green">P</div>
+                    <div class="stat-label">Total Payroll</div>
+                    <div class="stat-value" id="total-payroll">KES 0</div>
+                    <div class="stat-sub">Total earned by employees</div>
+                </div>
+                <div class="stat-card">
+                    <div class="icon-circle gray">W</div>
+                    <div class="stat-label">Total Withdrawals</div>
+                    <div class="stat-value" id="total-withdrawals">KES 0</div>
+                    <div class="stat-sub">Paid via M-Pesa</div>
+                </div>
+            </section>
+
+            <section class="deposit-section">
+                <h2>Deposit Funds</h2>
+                <form id="depositForm">
+                    <input type="number" id="depositAmount" placeholder="Amount" required>
+                    <input type="text" id="depositDescription" placeholder="Description" required>
+                    <button type="submit">Deposit</button>
+                </form>
+                <p>Current Balance: <span id="company-balance">KES 0</span></p>
+            </section>
+
+            <section class="details-grid">
+                <div class="data-box">
+                    <div class="box-header">
+                        <h3>Pending Approvals</h3>
+                        <a href="#" class="view-all">View all</a>
+                    </div>
+                    <div class="list-item">
+                        <div class="item-info">
+                            <strong>Jane Wanjiku</strong>
+                            <span>2026-02-04 at 08:05</span>
+                        </div>
+                        <span class="status-tag">Pending</span>
+                    </div>
+                    <div class="list-item">
+                        <div class="item-info">
+                            <strong>Peter Omondi</strong>
+                            <span>2026-02-02 at 08:00</span>
+                        </div>
+                        <span class="status-tag">Pending</span>
+                    </div>
+                    <div class="list-item">
+                        <div class="item-info">
+                            <strong>Mary Akinyi</strong>
+                            <span>2026-02-03 at 08:20</span>
+                        </div>
+                        <span class="status-tag">Pending</span>
+                    </div>
+                </div>
+
+                <div class="data-box">
+                    <div class="box-header">
+                        <h3>Recent Activity</h3>
+                    </div>
+                    <div class="activity-item">
+                        <div class="dot login"></div>
+                        <div class="activity-text">
+                            <strong>LOGIN</strong>
+                            <span>John Kamau • Feb 20, 02:51</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="dot login"></div>
+                        <div class="activity-text">
+                            <strong>LOGIN</strong>
+                            <span>John Kamau • Feb 8, 08:00</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="dot approve"></div>
+                        <div class="activity-text">
+                            <strong>APPROVE_ATTENDANCE</strong>
+                            <span>John Kamau • Feb 1, 09:00</span>
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="dot create"></div>
+                        <div class="activity-text">
+                            <strong>CREATE_EMPLOYEE</strong>
+                            <span>John Kamau • Jan 10, 11:30</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="admin.js"></script>
+</body>
+</html>

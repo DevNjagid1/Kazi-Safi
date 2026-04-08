@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazi Safi - Support Inbox</title>
+    <link rel="stylesheet" href="support.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2L14.5 9H22L16 14L18.5 21L12 17L5.5 21L8 14L2 9H9.5L12 2Z"/></svg>
+                </div>
+                <div class="brand-text">
+                    <h3>Kazi Safi</h3>
+                    <p>Work-Pay System</p>
+                </div>
+            </div>
+            <nav class="menu">
+    <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+    <a href="manage-employees.html" class="nav-item">Employees</a>
+    <a href="admin-attendance.html" class="nav-item">Attendance</a>
+    <a href="payroll.html" class="nav-item">Payroll</a>
+    <a href="support-inbox.html" class="nav-item">Support Inbox</a>
+    <a href="audit-logs.html" class="nav-item">Audit Logs</a>
+</nav>
+            <div class="sidebar-footer">
+                <div class="user-info"><strong>John Kamau</strong><span>Administrator</span></div>
+                <button class="logout-btn">Log out</button>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <header class="section-header">
+                <h1>Support Inbox</h1>
+                <p>Manage employee support tickets and inquiries</p>
+            </header>
+
+            <div class="filter-actions">
+                <div class="toggle-group">
+                    <button class="toggle-btn active" onclick="filterTickets('all')">All</button>
+                    <button class="toggle-btn" onclick="filterTickets('open')">Open</button>
+                    <button class="toggle-btn" onclick="filterTickets('resolved')">Resolved</button>
+                </div>
+            </div>
+
+            <div id="ticketContainer" class="ticket-list">
+                </div>
+        </main>
+    </div>
+    <script src="support.js"></script>
+</body>
+</html>

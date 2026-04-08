@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Kazi Safi</title>
+    <link rel="stylesheet" href="register.css">
+</head>
+<body>
+    <div class="auth-container">
+        <header>
+            <div class="logo-box">
+                <svg viewBox="0 0 24 24" width="30" height="30" fill="white">
+                    <path d="M12 2L14.5 9H22L16 14L18.5 21L12 17L5.5 21L8 14L2 9H9.5L12 2Z" />
+                </svg>
+            </div>
+            <h1>Kazi Safi</h1>
+            <p class="subtitle">Join the team</p>
+        </header>
+
+        <main class="auth-card">
+            <h2>Create Account</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" placeholder="Enter full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" placeholder="name@email.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regPass">Password</label>
+                    <input type="password" id="regPass" placeholder="Create password" required>
+                </div>
+
+                <button type="submit" class="auth-btn" id="regBtn">Register</button>
+            </form>
+            
+            <div class="toggle-view">
+                <p>Already have an account? <a href="login.html">Login here</a></p>
+            </div>
+        </main>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html>

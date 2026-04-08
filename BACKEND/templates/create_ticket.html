@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Ticket</title>
+</head>
+<body>
+    <h1>Create Support Ticket</h1>
+    <form method="post">
+        {% csrf_token %}
+        <input type="text" name="subject" placeholder="Subject" required>
+        <textarea name="message" placeholder="Message" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

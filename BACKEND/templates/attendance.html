@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Attendance</title>
+</head>
+<body>
+    <h1>Attendance</h1>
+    <ul>
+        {% for attendance in attendances %}
+            <li>{{ attendance.date }} - {{ attendance.status }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

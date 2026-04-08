@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Inbox - Admin</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .ticket { border: 1px solid #ccc; padding: 10px; margin: 10px 0; }
+        .ticket h3 { margin: 0; }
+        .status { font-weight: bold; }
+        .open { color: red; }
+        .in_progress { color: orange; }
+        .closed { color: green; }
+        form { margin-top: 10px; }
+    </style>
+</head>
+<body>
+    <h1>Admin Support Inbox</h1>
+    {% for ticket in tickets %}
+    <div class="ticket">
+        <h3>{{ ticket.subject }}</h3>
+        <p>{{ ticket.message }}</p>
+        <p>By: {{ ticket.user.username }} ({{ ticket.user.email }})</p>
+        <p>Status: <span class="status {{ ticket.status }}">{{ ticket.get_status_display }}</span></p>
+        <p>Created: {{ ticket.created_at }}</p>
+        {% if ticket.response %}
+        <p>Response: {{ ticket.response }}</p>
+        {% endif %}
+        <form method="post" action="{% url 'update_ticket' ticket.id %}">
+            {% csrf_token %}
+            <label>Response:</label><br>
+            <textarea name="response" rows="3">{{ ticket.response }}</textarea><br>
+            <label>Status:</label>
+            <select name="status">
+                <option value="open" {% if ticket.status == 'open' %}selected{% endif %}>Open</option>
+                <option value="in_progress" {% if ticket.status == 'in_progress' %}selected{% endif %}>In Progress</option>
+                <option value="closed" {% if ticket.status == 'closed' %}selected{% endif %}>Closed</option>
+            </select><br>
+            <button type="submit">Update</button>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>

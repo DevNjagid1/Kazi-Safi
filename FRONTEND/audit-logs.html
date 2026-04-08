@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kazi Safi - Audit Logs</title>
+    <link rel="stylesheet" href="audit.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2L14.5 9H22L16 14L18.5 21L12 17L5.5 21L8 14L2 9H9.5L12 2Z"/></svg>
+                </div>
+                <div class="brand-text">
+                    <h3>Kazi Safi</h3>
+                    <p>Work-Pay System</p>
+                </div>
+            </div>
+            <nav class="menu">
+    <a href="admin-dashboard.html" class="nav-item">Dashboard</a>
+    <a href="manage-employees.html" class="nav-item">Employees</a>
+    <a href="admin-attendance.html" class="nav-item">Attendance</a>
+    <a href="payroll.html" class="nav-item">Payroll</a>
+    <a href="support-inbox.html" class="nav-item">Support Inbox</a>
+    <a href="audit-logs.html" class="nav-item">Audit Logs</a>
+</nav>
+            <div class="sidebar-footer">
+                <div class="user-info"><strong>John Kamau</strong><span>Administrator</span></div>
+                <button class="logout-btn">Log out</button>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <header class="section-header">
+                <h1>Audit Logs</h1>
+                <p>View all system activities and user actions</p>
+            </header>
+
+            <div class="log-controls">
+                <div class="search-box">
+                    <input type="text" id="logSearch" placeholder="Search logs...">
+                </div>
+                <div class="filter-box">
+                    <select id="actionFilter">
+                        <option value="all">All Actions</option>
+                        <option value="login">Login/Logout</option>
+                        <option value="withdrawal">Withdrawals</option>
+                        <option value="attendance">Attendance</option>
+                        <option value="support">Support</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Timestamp</th>
+                            <th>User</th>
+                            <th>Action</th>
+                            <th>Details</th>
+                        </tr>
+                    </thead>
+                    <tbody id="logBody">
+                        </tbody>
+                </table>
+            </div>
+            <p class="audit-footer-note">Note: Audit logs are read-only and cannot be modified or deleted. All system activities are recorded for security and compliance purposes.</p>
+        </main>
+    </div>
+    <script src="audit.js"></script>
+</body>
+</html>

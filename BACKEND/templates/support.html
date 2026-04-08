@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Support</title>
+</head>
+<body>
+    <h1>Support Inbox</h1>
+    <ul>
+        {% for ticket in tickets %}
+            <li>{{ ticket.subject }} - {{ ticket.status }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_ticket' %}">Create Ticket</a>
+</body>
+</html>

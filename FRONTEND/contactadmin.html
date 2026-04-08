@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Admin - Kazi Safi</title>
+    <link rel="stylesheet" href="contactadmin.css">
+</head>
+<body>
+    <div class="dashboard-wrapper">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="white" width="24" height="24"><path d="M12 2L14.5 9H22L16 14L18.5 21L12 17L5.5 21L8 14L2 9H9.5L12 2Z"/></svg>
+                </div>
+                <div class="brand-text">
+                    <h3>Kazi Safi</h3>
+                    <p>Work-Pay System</p>
+                </div>
+            </div>
+            <nav class="menu" id="sideNav">
+                <a href="user.html" class="nav-item">Dashboard</a>
+                <a href="userattendance.html" class="nav-item">Mark Attendance</a>
+                <a href="userearning.html" class="nav-item">My Earnings</a>
+                <a href="userwithdraw.html" class="nav-item">Withdraw</a>
+                <a href="contactadmin.html" class="nav-item active">Contact Admin</a>
+            </nav>
+            <div class="sidebar-footer">
+                <div class="user-info">
+                    <strong id="employeeName">Employee Name</strong>
+                    <span>Employee</span>
+                </div>
+                <button id="logoutBtn" class="logout-btn">Log out</button>
+            </div>
+        </aside>
+
+        <main class="content-area">
+            <header class="section-header">
+                <div class="header-left">
+                    <h1>Contact Admin</h1>
+                    <p>Submit support tickets and get help</p>
+                </div>
+                <button class="new-ticket-btn" onclick="showTicketForm()">+ New Ticket</button>
+            </header>
+
+            <div class="status-overview">
+                <div class="status-card">
+                    <h2 id="openCount">0</h2>
+                    <span>Open Tickets</span>
+                </div>
+                <div class="status-card">
+                    <h2 id="resolvedCount">0</h2>
+                </div>
+            </div>
+
+            <div class="support-main-grid">
+                <div class="ticket-list-container">
+                    <h3>My Tickets</h3>
+                    <div id="ticketList" class="ticket-items-wrapper"></div>
+                </div>
+
+                <div class="ticket-detail-view" id="detailView">
+                    <div class="empty-state" id="emptyState">
+                        <svg viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="#9ca3af" stroke-width="1.5"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                        <p>Select a ticket to view details<br>or create a new one</p>
+                    </div>
+
+                    <div id="ticketDetailContent" style="display: none;"></div>
+
+                    <div class="ticket-form" id="ticketForm" style="display: none;">
+                        <h3>Create New Ticket</h3>
+                        <div class="form-group">
+                            <label>Category</label>
+                            <select id="ticketCategory">
+                                <option>Salary Inquiry</option>
+                                <option>Attendance Issue</option>
+                                <option>Technical Support</option>
+                                <option>Details Change Appeal</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Message</label>
+                            <textarea id="ticketMessage" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <div class="form-actions">
+                            <button class="cancel-btn" onclick="hideTicketForm()">Cancel</button>
+                            <button class="send-btn" onclick="submitTicket()">Submit Ticket</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="contactadmin.js"></script>
+</body>
+</html>

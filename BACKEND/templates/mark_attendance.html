@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark Attendance</title>
+</head>
+<body>
+    <h1>Mark Attendance</h1>
+    <form method="post">
+        {% csrf_token %}
+        <button type="submit" name="check_in">Check In</button>
+        <button type="submit" name="check_out">Check Out</button>
+    </form>
+</body>
+</html>

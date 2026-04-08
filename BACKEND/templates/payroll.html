@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Payroll</title>
+</head>
+<body>
+    <h1>Payroll</h1>
+    <ul>
+        {% for payroll in payrolls %}
+            <li>{{ payroll.month }} - {{ payroll.net_salary }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
